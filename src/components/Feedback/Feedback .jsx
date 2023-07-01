@@ -1,23 +1,19 @@
 import React from 'react';
-import { Button, FeedbackStyle, LiBtn, TitleH2, TitleH3, UlBtn } from './Feedback .styled';
+import { FeedbackStyle, TitleH2, TitleH3 } from './Feedback .styled';
+import { Statistics } from 'components/Statistics/Statistics';
+import { FeedbakcOptions } from 'components/FeedbackOptions/FeedbackOptions';
+import { Section } from 'components/Section/Section';
 
-export const Feedback = () => {
+export const Feedback = ({ state }) => {
+  // console.log(state);
   return (
     <FeedbackStyle>
-      <TitleH2>Please leave feedback</TitleH2>
-      <UlBtn>
-        <LiBtn>
-          <Button type="button">Good</Button>
-        </LiBtn>
-        <LiBtn>
-          <Button type="button">Neutral</Button>
-        </LiBtn>
-        <LiBtn>
-          <Button type="button">Bad</Button>
-        </LiBtn>
-      </UlBtn>
-
-      <TitleH3>Statistics</TitleH3>
+      <Section state={state} />
     </FeedbackStyle>
   );
 };
+
+// console.log(totalResponse(data));
+
+
+//
