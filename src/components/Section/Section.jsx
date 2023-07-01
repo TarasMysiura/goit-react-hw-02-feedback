@@ -1,40 +1,19 @@
 import React from 'react'
-import { TitleH2, TitleH3 } from './Section.styled';
-import { FeedbakcOptions } from 'components/FeedbackOptions/FeedbackOptions';
-import { Statistics } from 'components/Statistics/Statistics';
+import { SectionStyle, TitleH2 } from './Section.styled';
+// import { FeedbakcOptions } from 'components/FeedbackOptions/FeedbackOptions';
+// import { Statistics } from 'components/Statistics/Statistics';
+import PropTypes from 'prop-types';
 
-export const Section = (state) => {
+export const Section = ( {title, children} ) => {
   return (
-    <>
-        <TitleH2>Please leave feedback</TitleH2>
-        <FeedbakcOptions
-        // options={ } onLeaveFeedback={ }
-        />
-
-        <TitleH3>Statistics</TitleH3>
-        <Statistics
-          good={state.good}
-          neutral={state.neutral}
-          bad={state.bad}
-          total={totalResponse(state)}
-          positivePercentage={(
-            (state.good * 100) /
-            totalResponse(state)
-          ).toFixed()}
-        ></Statistics>
-      
-    </>
+    <SectionStyle>
+      {title && <TitleH2>{title}</TitleH2>}
+      {children}
+    </SectionStyle>
   );
 }
 
-function totalResponse(data) {
-  const values = Object.values(data);
-
-  // console.log(values);
-  let total = 0;
-  for (let i = 0; i < values.length; i++) {
-    total += values[i];
-  }
-  // console.log(total);
-  return total;
-}
+Section.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};

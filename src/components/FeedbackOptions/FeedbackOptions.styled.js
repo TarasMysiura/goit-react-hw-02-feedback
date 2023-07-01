@@ -4,11 +4,14 @@ export const BtnUl = styled.ul`
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  justify-content: center;
   gap: 30px;
   list-style: none;
 `;
 
-export const BtnLi = styled.li``;
+export const BtnLi = styled.li`
+  
+`;
 
 export const Button = styled.button`
   cursor: pointer;

@@ -9,6 +9,7 @@ export const StatsUl = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-left: 30px;
 `;
 
 export const StatsLi = styled.li`

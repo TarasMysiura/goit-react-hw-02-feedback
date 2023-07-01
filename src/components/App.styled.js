@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from "styled-components";
 
 export const FeedbackStyle = styled.div`
   border: 1px solid black;
@@ -14,4 +14,3 @@ export const FeedbackStyle = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
-
