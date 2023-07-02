@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatsUl, StatsLi, LabelSpan, CountSpan } from './Statistics.styled';
+import { PropTypes } from 'prop-types';
 
 export const Statistics = ({
   good,
@@ -31,8 +32,14 @@ export const Statistics = ({
         <LabelSpan>Positive feedback: </LabelSpan>
         <CountSpan>{positivePercentage}%</CountSpan>
       </StatsLi>
-      {/* )) */}
-      {/* } */}
     </StatsUl>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
 };
