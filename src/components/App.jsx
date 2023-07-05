@@ -3,6 +3,7 @@ import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { FeedbackStyle } from './App.styled';
+import { Notification } from './Notification/Notification';
 
 export class App extends Component {
   state = {
@@ -60,9 +61,7 @@ export class App extends Component {
             </Section>
           ) : (
             <Section title="Statistics">
-              <p style={{ display: 'flex', justifyContent: 'center' }}>
-                There is no feedback
-              </p>
+              <Notification message="There is no feedback" />
             </Section>
           )}
         </FeedbackStyle>
